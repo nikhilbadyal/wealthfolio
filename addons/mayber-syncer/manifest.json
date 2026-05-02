@@ -1,0 +1,32 @@
+{
+  "id": "maybe-syncer-addon",
+  "name": "Maybe App Importer",
+  "version": "1.0.0",
+  "description": "Imports accounts and transactions from a Maybe-compatible API",
+  "author": "Wealthfolio User",
+  "main": "dist/addon.js",
+  "sdkVersion": "3.3.0",
+  "enabled": true,
+  "permissions": [
+    {
+      "category": "activities",
+      "functions": ["getAll", "checkImport", "import"],
+      "purpose": "Detect previously imported Maybe transactions, validate mapped activities, and import new rows"
+    },
+    {
+      "category": "accounts",
+      "functions": ["getAll", "create"],
+      "purpose": "Map Maybe accounts to Wealthfolio accounts and create missing cash accounts"
+    },
+    {
+      "category": "secrets",
+      "functions": ["get", "set"],
+      "purpose": "Securely store the Maybe API base URL and API key"
+    },
+    {
+      "category": "ui",
+      "functions": ["sidebar.addItem", "router.add"],
+      "purpose": "Provide an importer configuration and run UI"
+    }
+  ]
+}

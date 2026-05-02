@@ -2,6 +2,9 @@ packages:
   - "apps/frontend"
   - "packages/*"
   - "addons/*"
+allowBuilds:
+  esbuild: false
+  msw: false
 
 ignoredBuiltDependencies:
   - "@tailwindcss/oxide"
